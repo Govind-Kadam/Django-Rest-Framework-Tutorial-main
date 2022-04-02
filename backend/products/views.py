@@ -21,6 +21,7 @@ class ProductListCreateAPIView(
         # serializer.save(user=self.request.user)
         title = serializer.validated_data.get('title')
         content = serializer.validated_data.get('content') or None
+        print(content)
         if content is None:
             content = title
         serializer.save(user=self.request.user, content=content)
